@@ -294,21 +294,6 @@ def func_four_wing(x, t, params):
                      b * x[0] + c * x[1] - x[0] * x[2],
                      -x[2] - x[0] * x[1]])
 
-def func_lotka(x, t, params):
-    # 2-d system
-    if params.size == 0:
-        a = 2 / 3
-        b = 4 / 3
-        c = 1
-        d = 1
-    else:
-        a = params[0]
-        b = params[1]
-        c = params[2]
-        d = params[3]
-    
-    return np.array([a * x[0] - b * x[0] * x[1], - c * x[1] + d * x[0] * x[1]])
-
 def rk4(f, x0, t, params=np.array([])):
     n = len(t)
     x = np.zeros((n, len(x0)))

@@ -34,14 +34,14 @@ In addition, we provide code `chaos_transformer_train.py` for readers to train t
 - For more information about the hyperparameters optimization, you can find from: https://github.com/Zheng-Meng/Reservoir-Computing-and-Hyperparameter-Optimization.
 
 # Cite our work
-
+```
 @article{zhai2024reconstructing,
   title={Reconstructing dynamics from sparse observations with no training on target system},
   author={Zhai, Zheng-Meng and Huang, Jun-Yin and Stern, Benjamin D. and Lai, Ying-Cheng},
   journal={arXiv preprint arXiv:2410.21222},
   year={2024}
 }
-
+```
 
 
 

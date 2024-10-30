@@ -31,7 +31,7 @@ In addition, we provide code `chaos_transformer_train.py` for readers to train t
 
 # More information
 
-- For more information about the hyperparameters optimization, you can find from: https://github.com/Zheng-Meng/Reservoir-Computing-and-Hyperparameter-Optimization.
+- For more information about the hyperparameters optimization, you can find from my [GitHub page](https://github.com/Zheng-Meng/Reservoir-Computing-and-Hyperparameter-Optimization).
 
 # Cite our work
 ```

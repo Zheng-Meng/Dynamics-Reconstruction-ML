@@ -12,35 +12,20 @@ from chaotic_systems import *
 import matplotlib.pyplot as plt
 
 def plot_and_save(system, t_all, ts, params, plot_length=1000):
-    # plot_length = 1000
-    # fig, ax = plt.subplots(3, 1, figsize=(8, 13))
-    # ax[0].plot(t_all[:plot_length], ts[:plot_length , 0])
-    # ax[1].plot(t_all[:plot_length], ts[:plot_length , 1])
-    # ax[2].plot(t_all[:plot_length], ts[:plot_length , 2])
-    
-    # ax[2].set_xlabel('t')
-    # ax[0].set_ylabel('x')
-    # ax[1].set_ylabel('y')
-    # ax[2].set_ylabel('z')
-    
-    # plt.savefig('./demonstration/{}_time_series.png'.format(system))
-    # plt.show()
-    
-    
     # ----- to plot
     # plot_length = 500
-    # fig, ax = plt.subplots(3, 1, figsize=(8, 13))
-    # ax[0].plot(range(plot_length), ts[500:500+plot_length , 0])
-    # ax[1].plot(range(plot_length), ts[500:500+plot_length , 1])
-    # ax[2].plot(range(plot_length), ts[500:500+plot_length , 2])
+    fig, ax = plt.subplots(3, 1, figsize=(8, 13))
+    ax[0].plot(range(plot_length), ts[500:500+plot_length , 0])
+    ax[1].plot(range(plot_length), ts[500:500+plot_length , 1])
+    ax[2].plot(range(plot_length), ts[500:500+plot_length , 2])
     
-    # ax[2].set_xlabel('t')
-    # ax[0].set_ylabel('x')
-    # ax[1].set_ylabel('y')
-    # ax[2].set_ylabel('z')
+    ax[2].set_xlabel('t')
+    ax[0].set_ylabel('x')
+    ax[1].set_ylabel('y')
+    ax[2].set_ylabel('z')
     
     # # plt.savefig('./demonstration/{}_time_series.png'.format(system))
-    # # plt.show()
+    plt.show()
     
     # ax = plt.figure().add_subplot(projection='3d')
     # ax.plot(ts[:, 0], ts[:, 1], ts[:, 2], color='orange')
@@ -49,7 +34,7 @@ def plot_and_save(system, t_all, ts, params, plot_length=1000):
     # # plt.savefig('./demonstration/{}_3d.png'.format(system))
     # plt.show()
     
-    pkl_file = open('./data_cycle/' + 'data_{}_1'.format(system) + '.pkl', 'wb')
+    pkl_file = open('./chaos_data/' + 'data_{}'.format(system) + '.pkl', 'wb')
     pickle.dump(ts, pkl_file)
     pickle.dump(params, pkl_file)
     pkl_file.close()
@@ -269,134 +254,24 @@ def generate_bouali(scale=2, plot_length=1000, data_length=5000):
     plot_and_save(system, t_all, ts, params, plot_length=plot_length)
     
 
-def generate_harmonic(scale=2, plot_length=1000, data_length=5000):
-    dt = 0.01
-    t_end = data_length * scale
-    t_all = np.arange(0, t_end, dt)
-    x0 = [0.1*np.random.rand(), 0.1*np.random.rand()]
-    
-    params = np.array([0])
-    
-    system = 'harmonic'
-    ts = rk4(func_harmonic, x0, t_all, params=params)
-    
-    ts = ts[::scale, :]
-    t_all = t_all[::scale]
-    
-    plot_and_save(system, t_all, ts, params, plot_length=plot_length)
-    
-#################### generate lorenz96
-# dt = 0.01
-# t_end = 5000
-# t_all = np.arange(0, t_end, dt)
-# N = 40
-# F = 8
-# x0 = np.random.rand(N)
-
-# params = {'N': N, 'F': F}
-
-# ts = rk4(func_lorenz96, x0, t_all, params=np.array([F]))
-
-# pkl_file = open('./data/' + 'data_lorenz96' + '.pkl', 'wb')
-# pickle.dump(ts, pkl_file)
-# pickle.dump(params, pkl_file)
-# pkl_file.close()
-
-
-
-################### generate mackeyglass
-# dt = 0.01
-# t_end = 3000000
-# t_all = np.arange(0, t_end, dt)
-# x0 = [1.0 + np.random.rand()]
-
-# ts = rk4_delay(func_mackeyglass, x0, t_all, params=np.array([17]))
-
-# ts = ts[::100]
-# ts = ts[400:]
-
-# # fig, ax = plt.subplots(1, 1, figsize=(8, 6))
-# # ax.plot(ts_norm[:, 0])
-
-# pkl_file = open('./data_cycle/' + 'data_mg17' + '.pkl', 'wb')
-# pickle.dump(ts, pkl_file)
-# pkl_file.close()
-
-# # pkl_file = open('./data_cycle/' + 'data_mg17' + '.pkl', 'rb')
-# # data1 = pickle.load(pkl_file)
-# # data2 = pickle.load(pkl_file)
-# # pkl_file.close()
-
-# plot_length = 500
-# fig, ax = plt.subplots(1, 1, figsize=(8, 6))
-# ax.plot(range(plot_length), ts[500:500+plot_length , 0])
-# plt.show()
-
-
-
-
-# scaler = MinMaxScaler()
-# ts_norm = scaler.fit_transform(ts)
-
-
 if __name__ == '__main__':
     print('save_chaos')
     
-    # generate_lorenz(data_length=50000)
-    # generate_rossler()
-    # generate_foodchain()
-    # generate_hastings(scale=30, data_length=5000)
-    # generate_lotka_volterra(scale=50, data_length=5000)
-    # generate_rikitake(scale=6, data_length=5000)
-    # generate_wang(scale=4, data_length=5000)
-    # generate_sprott(index=0, scale=12, data_length=5000)
-    # generate_sprott(index=1, scale=12, data_length=5000)
-    # generate_sprott(index=2, scale=8, data_length=5000)
-    # generate_sprott(index=3, scale=8, data_length=5000)
-    # generate_sprott(index=4, scale=10, data_length=5000)
-    # generate_sprott(index=5, scale=12, data_length=5000)
-    # generate_sprott(index=6, scale=8, data_length=5000)
-    # generate_sprott(index=7, scale=8, data_length=5000)
-    # generate_sprott(index=8, scale=16, data_length=5000)
-    # generate_sprott(index=9, scale=6, data_length=5000)
-    # generate_sprott(index=10, scale=8, data_length=5000)
-    # generate_sprott(index=11, scale=6, data_length=5000)
-    # generate_sprott(index=12, scale=8, data_length=5000)
-    # generate_sprott(index=13, scale=8, data_length=5000)
-    # generate_sprott(index=14, scale=8, data_length=5000)
-    # generate_sprott(index=15, scale=8, data_length=5000)
-    # generate_sprott(index=16, scale=8, data_length=5000)
-    # generate_sprott(index=17, scale=8, data_length=5000)
-    # generate_sprott(index=18, scale=6, data_length=5000)
-
-    # generate_chua(scale=2, data_length=5000)
-    # generate_dadras(scale=2, data_length=5000)
-    # generate_four_wing(scale=12, data_length=5000)
-    
-    # generate_aizawa(scale=3, data_length=5000)
-    # generate_bouali(scale=3, data_length=5000)
-    
-    
-    # for transformer time series (missing data) imputation work
     data_length = 6000
     data_length = 30000
     
-    generate_harmonic(data_length=data_length, scale=2)
-    
     # generate_lorenz(data_length=data_length)
-    # generate_lorenz(data_length=data_length, scale=1) # for test 
     generate_rossler(data_length=data_length, scale=16)
     
     # generate_hastings(scale=10, data_length=data_length) # default 30
     # generate_lotka_volterra(scale=10, data_length=data_length) # default 50
-    # generate_lotka_volterra(scale=5, data_length=data_length) # for test (fast)
     # generate_rikitake(scale=10, data_length=data_length)
     # generate_wang(scale=5, data_length=data_length)
     # generate_sprott(index=0, scale=20, data_length=data_length)
     # generate_sprott(index=1, scale=15, data_length=data_length)
     # generate_sprott(index=2, scale=15, data_length=data_length)
-    
-    
+    # generate_sprott(index=3, scale=13, data_length=data_length)
+    # generate_sprott(index=4, scale=17, data_length=data_length)
     # generate_sprott(index=5, scale=13, data_length=data_length)
     # generate_sprott(index=6, scale=13, data_length=data_length)
     # generate_sprott(index=7, scale=18, data_length=data_length)
@@ -411,20 +286,12 @@ if __name__ == '__main__':
     # generate_sprott(index=16, scale=8, data_length=data_length)
     # generate_sprott(index=17, scale=17, data_length=data_length)
     # generate_sprott(index=18, scale=12, data_length=data_length)
-
-    
     # generate_dadras(scale=2, data_length=data_length)
     # generate_four_wing(scale=24, data_length=data_length)
     
     # generate_aizawa(scale=6, data_length=data_length)
-    # generate_aizawa(scale=3, data_length=data_length)  # for test (fast)
     # generate_bouali(scale=6, data_length=data_length)
-
-
     # generate_foodchain(data_length=data_length, scale=10)
-    # generate_foodchain(data_length=data_length, scale=5) # for test (fast)
-    # generate_sprott(index=3, scale=13, data_length=data_length)
-    # generate_sprott(index=4, scale=17, data_length=data_length)
     # generate_chua(scale=4, data_length=data_length)
 
 

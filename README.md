@@ -27,9 +27,9 @@ Afterward, execute `rc_prediction.py` to use the Transformer-reconstructed data 
 <img src='figures/rc_prediction_long.png' width='400'>
 </p>
 
-In addition to use our trained model, we also provide code `chaos_transformer_train.py` for readers to train the transformer by themselves. After training, please remember to change the 'save_file_name' in `chaos_transformer_read_and_test.py` to your saved model file name to ensure the use of your own trained model when doing testing. A jupiter notebook is provided in examples file, to help readers understand the code.
+In addition to using our pre-trained model, we also provide the script chaos_transformer_train.py for readers to train the transformer themselves. After training, please ensure that the 'save_file_name' variable in chaos_transformer_read_and_test.py is updated to match your saved model file name, so that your own trained model is used during testing. A Jupyter notebook is provided in the examples folder to help readers understand and reproduce the code workflow.
 
-Furthermore, the readers can also generate more diverse synthetic systems for training, to improve the dyanmics reconstruction performance on unseen target systems in the testing phase. The performance decrease follows a power-law relationship with respect to the training systems:
+Furthermore, readers may generate more diverse synthetic systems for training, which can enhance reconstruction performance on previously unseen target systems during testing. The performance degradation follows a power-law relationship with respect to the diversity of training systems:
 
 <p align="center">
 <img src='figures/power_law.png' width='400'>

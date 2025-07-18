@@ -129,7 +129,7 @@ def generate_rikitake(scale=5, plot_length=1000, data_length=5000):
     x0 = [0.1 * np.random.rand(), 0.1 * np.random.rand(), 0.1 * np.random.rand()]
 
     system = 'rikitake'
-    params = np.array([2.0, 5.0])
+    params = np.array([0.94, 1.7])
     ts = rk4(func_rikitake, x0, t_all, params=params)
     
     ts = ts[::scale, :]

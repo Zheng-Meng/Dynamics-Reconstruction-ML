@@ -79,7 +79,6 @@ def generate_foodchain(scale=5, plot_length=1000, data_length=5000):
     x0 = [0.4 * np.random.rand() + 0.6, 0.4 * np.random.rand() + 0.15, 0.5 * np.random.rand() + 0.3]
 
     system = 'foodchain'
-    # params = np.array([0.94, 1.7, 5.0])
     params = np.array([0.98, 2.009, 2.876])
     ts = rk4(func_foodchain, x0, t_all, params=params)
     

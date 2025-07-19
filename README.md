@@ -40,6 +40,17 @@ Furthermore, readers may generate more diverse synthetic systems for training, w
 # More information
 
 - For more information about the hyperparameters optimization, you can find from my [GitHub page](https://github.com/Zheng-Meng/Reservoir-Computing-and-Hyperparameter-Optimization).
+- Some thoughts:
+  - Performance can be improved by increasing the neural network parameters and dataset size. Another direction is in structure, for example, replacing positional encoding with RoPE may help transformer generalize better to sequence length (testing longer than in training).
+  - The dynamical systems demonstrated are low-dimensional. Training data for cases such as spatio-temporal is limited and expensive. Try first a specific spatio-temporal system with varying parameters might be feasible.
+  - Extensive experiments are conducted to demonstrate the generalization ability. However, a theoretical explanation of why the model generalizes well to some systems and less to others remains elusive. Quantifying the 'complexity' or measuring the 'similarity' between different dynamical systems might work.
+  - An assumption is that the dominant frequencies of dynamical systems fall within a particular range (as shown in Fig.4). How this range influences model performance? Where might the performance limits lie?
+  - We can feed in metadata as additional input, such as system dominat frequency or bifurcation parameters.
+  <!-- - Reservoir computing can be considered a 'tail' after the transformer, for long-term attractor prediction. Different 'tails' after dynamics reconstruction, such as anomaly detection can be used.-->
+  - What if we train the model on a mix of data, such as periodic, quasi-periodic and chaotic systems?
+
+If you have any questions or suggestions, feel free to reach out.
+
 
 # Cite our work
 ```

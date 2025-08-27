@@ -16,7 +16,7 @@ We address this challenge by developing a hybrid transformer and reservoir-compu
 
 Download the time series data of all chaotic systems from [Zenodo](https://doi.org/10.5281/zenodo.14014975) and move them to the 'chaos_data' folder. You can also generate the chaotic data by running `save_chaos.py`. To proceed with the machine learning code, either download the data and move it to the 'chaos_data' folder or generate the data yourself.
 
-Run `chaos_transformer_read_and_test.py` to evaluate the trained model on testing (target) systems, with sequence length $L_s=2000$ and sparisty ratio $S_r=0.8$. It is important to note that the model has not encountered the testing systems during training. An example of reconstructed chaotic foodchain system is shown below:
+Run `chaos_transformer_read_and_test.py` to evaluate the trained model on testing (target) systems, with sequence length $L_s=2000$ and sparisty $S_m=0.8$. It is important to note that the model has not encountered the testing systems during training. An example of reconstructed chaotic foodchain system is shown below:
 <p align="center">
 <img src='figures/1_foodchain.png' width='400'>
 </p>

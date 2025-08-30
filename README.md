@@ -1,4 +1,4 @@
-<h1 align="center">Reconstructing dynamics from sparse observations with no training on target system</h1>
+<h1 align="center">Bridging known and unknown dynamics by transformer-based machine-learning inference from sparse observations</h1>
 
 <p align="center">
 <img src='images/irregular_time_series_illustration.png' width='600'>

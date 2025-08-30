@@ -4,6 +4,8 @@
 <img src='images/irregular_time_series_illustration.png' width='600'>
 </p>
 
+Aug. 28, 2025. [Bridging known and unknown dynamics by transformer-based machine-learning inference from sparse observations](https://www.nature.com/articles/s41467-025-63019-8) has been published in Nature Communications!
+
 This repo is for our preprint [Reconstructing dynamics from sparse observations with no training on target system](https://arxiv.org/abs/2410.21222), where dynamics be faithfully reconstructed from the limited observations without any training data. This framework provides a paradigm of reconstructing complex and nonlinear dynamics in the extreme situation where training data does not exist and the observations are random and sparse.
 
 <p align="center">
@@ -53,6 +55,7 @@ If you have any questions or suggestions, feel free to reach out.
   year={2024}
 }
 ```
+
 
 
 

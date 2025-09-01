@@ -48,14 +48,17 @@ If you have any questions or suggestions, feel free to reach out.
 
 # Cite our work
 ```
-@article{zhai2024reconstructing,
-  title={Reconstructing dynamics from sparse observations with no training on target system},
-  author={Zhai, Zheng-Meng and Huang, Jun-Yin and Stern, Benjamin D. and Lai, Ying-Cheng},
-  journal={arXiv preprint arXiv:2410.21222},
-  year={2024}
+@article{zhai2025bridging,
+  title={Bridging known and unknown dynamics by transformer-based machine-learning inference from sparse observations},
+  author={Zhai, Zheng-Meng and Stern, Benjamin D and Lai, Ying-Cheng},
+  journal={Nature Communications},
+  volume={16},
+  number={1},
+  pages={8053},
+  year={2025},
+  publisher={Nature Publishing Group UK London}
 }
 ```
-
 
 
 
